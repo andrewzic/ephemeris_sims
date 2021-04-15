@@ -37,9 +37,9 @@ ephem: use=DE990_BLAH,sim=DE990_nominal
 <obsRun>
 name: pks
 tel: pks
-start: 53500
-finish: 60000
-sampling: cadence=50
+start: 46070
+finish: 55200
+sampling: cadence=100
 sched: sched_ephem_BLAH
 </obsRun>
 <schedule>
