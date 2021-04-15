@@ -1,6 +1,6 @@
 #!/bin/bash
-#SBATCH --job-name=ppta_pe_hd_fixgam_7nfreq_be_jup_el
-#SBATCH --output=/flush5/zic006/slurm_logs/ppta_all_mc_array_dropout_spin_v_spincommon_20210415_%A_%a.log
+#SBATCH --job-name=da5_ppta_pe_hd_fixgam_7nfreq_be_jup_el
+#SBATCH --output=/flush5/zic006/ephemeris_sims/slurm_logs/da5_ppta__pe_hd_fixed_gamma_7_nfreq_be_jup_el_20210415_%A_%a.log
 #SBATCH --ntasks=4
 #SBATCH --time=1-21:30
 #SBATCH --mem-per-cpu=7G
