@@ -11,11 +11,11 @@ foreach param_label (`cat $PAT/parameters.dat`)
     endif
     
     cd $param_label
-    if (-f output/real_0/J0437-4715.tim) then
-	echo ${param_label} already done. Continuing...
-	cd $PAT
-	continue
-    endif
+    #if (-f output/real_0/J0437-4715.tim) then
+	#echo ${param_label} already done. Continuing...
+	#cd $PAT
+	#continue
+    #endif
     echo $ptasim_inp
     ptaSimulate $ptasim_inp
     source ${param_label}_perturb_ppta/scripts/runScripts_master

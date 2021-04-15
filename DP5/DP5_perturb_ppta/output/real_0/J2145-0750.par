@@ -1,8 +1,8 @@
 PSRJ           J2145-0750
 RAJ            21:45:50.4588               
 DECJ           -07:50:18.514               
-F0             62.295887837389113312     1  1.7659645819475806349e-14
-F1             -1.1560100179229566458e-16 1  1.0655314333948584339e-22
+F0             62.2958878373891854       1  2.3328389234980563009e-14
+F1             -1.1560079882720374769e-16 1  5.9497197153879132945e-23
 PEPOCH         55000                       
 POSEPOCH       55000                       
 DMEPOCH        54500                       
@@ -19,13 +19,13 @@ XDOT           8e-15
 TASC           50802.29822944              
 EPS1           -6.84e-06                   
 EPS2           -1.8059e-05                 
-START          53499.999999999999154       
-FINISH         59949.999999962979203       
+START          46069.999999999999805       
+FINISH         55169.999999951159637       
 TRACK          -2                          
-TZRMJD         56700.000000053502326       
+TZRMJD         50570.00000000074191        
 TZRFRQ         1400                     
 TZRSITE        pks   
-TRES           0.227        
+TRES           0.212        
 EPHVER         5                           
 NE_SW          4                           
 CLK            TT(TAI)
@@ -36,7 +36,7 @@ DILATEFREQ     Y
 PLANET_SHAPIRO Y
 T2CMETHOD      IAU2000B
 CORRECT_TROPOSPHERE  N
-EPHEM          DE990_DP5
+EPHEM          DE990_nominal
 NITS           1
-NTOA           130
-CHI2R          1.3132 127
+NTOA           92
+CHI2R          1.1626 89
