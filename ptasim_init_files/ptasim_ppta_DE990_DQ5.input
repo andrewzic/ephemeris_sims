@@ -32,14 +32,14 @@ psr: name=J2145-0750
 psr: name=J2241-5236
 </pulsars>
 <t2files>
-ephem: use=DE990_DQ5,sim=DE990_nominal
+ephem: use=DE990_nominal,sim=DE990_DQ5
 </t2files>
 <obsRun>
 name: pks
 tel: pks
-start: 53500
-finish: 60000
-sampling: cadence=50
+start: 46070
+finish: 55200
+sampling: cadence=100
 sched: sched_ephem_DQ5
 </obsRun>
 <schedule>

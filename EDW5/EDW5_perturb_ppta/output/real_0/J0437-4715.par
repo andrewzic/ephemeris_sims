@@ -1,8 +1,8 @@
 PSRJ           J0437-4715
 RAJ            04:37:15.8961737            
 DECJ           -47:15:09.110714            
-F0             173.68794581218421701     1  8.3780870213127275082e-14
-F1             -1.7283617530578708891e-15 1  4.077829385046616201e-22 
+F0             173.68794581218402401     1  5.1228195013839532528e-14
+F1             -1.7283609057791634186e-15 1  1.4612429902072381595e-22
 PEPOCH         54500                       
 POSEPOCH       54500                       
 DMEPOCH        54500                       
@@ -19,15 +19,15 @@ ECC            1.9181099999999999999e-05
 PBDOT          3.7280000000000000002e-12   
 OMDOT          0.0138                      
 M2             0.224                       
-START          53499.999999999998987       
-FINISH         59950.000000011378532       
+START          46069.999999999998078       
+FINISH         55169.999999971055853       
 TRACK          -2                          
-TZRMJD         56749.999999980764468       
+TZRMJD         50569.999999985621475       
 TZRFRQ         1400                     
 TZRSITE        pks   
 KOM            207                         
 KIN            137.56                      
-TRES           0.442        
+TRES           0.266        
 EPHVER         5                           
 NE_SW          4                           
 CLK            TT(TAI)
@@ -38,7 +38,7 @@ DILATEFREQ     Y
 PLANET_SHAPIRO Y
 T2CMETHOD      IAU2000B
 CORRECT_TROPOSPHERE  N
-EPHEM          DE990_EDW5
+EPHEM          DE990_nominal
 NITS           1
-NTOA           260
-CHI2R          4.9486 257
+NTOA           184
+CHI2R          1.8042 181

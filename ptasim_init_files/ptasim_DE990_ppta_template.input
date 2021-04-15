@@ -32,7 +32,7 @@ psr: name=J2145-0750
 psr: name=J2241-5236
 </pulsars>
 <t2files>
-ephem: use=DE990_BLAH,sim=DE990_nominal
+ephem: use=DE990_nominal,sim=DE990_BLAH
 </t2files>
 <obsRun>
 name: pks

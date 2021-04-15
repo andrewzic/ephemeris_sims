@@ -1,8 +1,8 @@
 PSRJ           J1545-4550
 RAJ            15:45:55.94596              
 DECJ           -45:50:37.5272              
-F0             279.69769901330512654     1  2.2471629260503163808e-13
-F1             -4.106994322528893557e-15 1  2.2595494915572860647e-21
+F0             279.69769901330639181     1  2.7248102414263749565e-13
+F1             -4.1069994287219963025e-15 1  5.7887801067723085162e-22
 PEPOCH         55937                       
 POSEPOCH       55937                       
 DMEPOCH        55937                       
@@ -13,13 +13,13 @@ T0             55611.399999999999999
 A1             3.8469053                   
 OM             221.3                       
 ECC            1.3e-05                     
-START          53500.000000000002785       
-FINISH         59949.999999992517171       
+START          46069.999999999995691       
+FINISH         55169.999999983742448       
 TRACK          -2                          
-TZRMJD         56700.00000001594524        
+TZRMJD         50570.000000012998019       
 TZRFRQ         1400                     
 TZRSITE        pks   
-TRES           1.070        
+TRES           0.460        
 EPHVER         5                           
 NE_SW          4                           
 CLK            TT(TAI)
@@ -30,7 +30,7 @@ DILATEFREQ     Y
 PLANET_SHAPIRO Y
 T2CMETHOD      IAU2000B
 CORRECT_TROPOSPHERE  N
-EPHEM          DE990_EDW5
+EPHEM          DE990_nominal
 NITS           1
-NTOA           130
-CHI2R          29.2952 127
+NTOA           92
+CHI2R          5.4594 89
