@@ -7,11 +7,11 @@
 	"bayes_ephem":
         {
             "jup_el": [1, 1, 1, 1, 1, 1],
-	    "d_jupiter_mass": False,
-	    "d_neptune_mass": False,
-	    "d_saturn_mass": False,
-	    "d_uranus_mass": False,
-	    "frame_drift_rate": False
+	    "d_jupiter_mass": "False",
+	    "d_neptune_mass": "False",
+	    "d_saturn_mass": "False",
+	    "d_uranus_mass": "False",
+	    "frame_drift_rate": "False"
         }
     },
     "J0437-4715":  {"efac": "by_backend" },
