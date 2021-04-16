@@ -10,7 +10,7 @@ foreach param_label (`cat $PAT/parameters.dat`)
 	sed -i 's|BLAH|'${param_label}'|g' $ptasim_inp
     endif
     
-    cd $param_label
+    cd $PAT/data/$param_label
     #if (-f output/real_0/J0437-4715.tim) then
 	#echo ${param_label} already done. Continuing...
 	#cd $PAT
