@@ -1,6 +1,6 @@
 paramfile_label: 20210415
 datadir: /flush5/zic006/ephemeris_sims/data/DA5/DA5_perturb_ppta/output/real_0/
-out: /flush5/zic006/ephemeris_sims/enterprise_out/da5_ppta_pe_fixed_gamma_7_nfreq_be_jup_el_20210416/
+out: /flush5/zic006/ephemeris_sims/enterprise_out/da5_ppta_pe_hd_fixed_gamma_7_nfreq_be_jup_20210415/
 overwrite: True
 array_analysis: True
 ssephem: DE990_nominal
@@ -8,9 +8,9 @@ sampler: ptmcmcsampler
 SCAMweight: 30
 AMweight: 15
 DEweight: 50
-nsamp: 1000000
+nsamp: 120000
 #efac: -1
 #equad: -1
 #noisefiles: /flush5/zic006/data/noisefiles/
 {0}
-noise_model_file: /flush5/zic006/ephemeris_sims/data/noise_models/fixed_gamma_7_nfreq_be_jup_el.json
+noise_model_file: /flush5/zic006/ephemeris_sims/data/noise_models/fixed_gamma_7_nfreq_be_jup_el0.json
