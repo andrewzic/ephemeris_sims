@@ -45,8 +45,6 @@ sched: sched_ephem_GM5
 <schedule>
 name: sched_ephem_GM5
 observe: psr=J0437-4715,toaerr=2.0e-7,freq=1400
-observe: psr=J1017-7156,toaerr=2.0e-7,freq=1400
-observe: psr=J0437-4715,toaerr=2.0e-7,freq=1400
 observe: psr=J0613-0200,toaerr=2.0e-7,freq=1400
 observe: psr=J0711-6830,toaerr=2.0e-7,freq=1400
 observe: psr=J1017-7156,toaerr=2.0e-7,freq=1400
