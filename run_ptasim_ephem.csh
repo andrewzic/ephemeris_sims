@@ -9,7 +9,9 @@ foreach param_label (`cat $PAT/parameters.dat`)
 	cp $template $ptasim_inp
 	sed -i 's|BLAH|'${param_label}'|g' $ptasim_inp
     endif
-    
+    if (! -d $PAT/data/$param_label) then
+	mkdir -p $PAT/data/$param_label
+    endif
     cd $PAT/data/$param_label
     #if (-f output/real_0/J0437-4715.tim) then
 	#echo ${param_label} already done. Continuing...
