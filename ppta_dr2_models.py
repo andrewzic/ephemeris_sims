@@ -199,10 +199,10 @@ class PPTADR2Models(StandardModels):
     if "jup_el" in option or "outer" in option or "default" in option:
       if isinstance(option, dict) and (type(option['jup_el']) is list or \
                                        type(option['jup_el']) is np.ndarray):
-        ekw['jup_orb_elements'] = UniformMask(-0.05, 0.05, option['jup_el'])\
+        ekw['jup_orb_elements'] = UniformMask(-0.5, 0.5, option['jup_el'])\
                                              ('jup_oe')
       else:
-        ekw['jup_orb_elements'] = parameter.Uniform(-0.05, 0.05, size=6)\
+        ekw['jup_orb_elements'] = parameter.Uniform(-0.5, 0.5, size=6)\
                                                    ('jup_oe')
 
     if "sat_m" in option or "outer" in option or "default" in option:
