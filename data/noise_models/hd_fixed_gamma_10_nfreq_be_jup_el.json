@@ -1,9 +1,9 @@
 {
-    "model_name": "hd_fixed_gamma_7_nfreq_be_jup_el",
+    "model_name": "hd_fixed_gamma_10_nfreq_be_jup_el",
     "universal":
     {},
     "common_signals": {
-	"gwb": "hd_fixed_gamma_7_nfreq",
+	"gwb": "hd_fixed_gamma_10_nfreq",
 	"bayes_ephem":
         {
             "jup_el": [1, 1, 1, 1, 1, 1],

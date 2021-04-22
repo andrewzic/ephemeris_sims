@@ -1,13 +1,13 @@
 {
-    "model_name": "hd_fixed_gamma_7_nfreq_be_jup_el",
+    "model_name": "fixed_gamma_7_nfreq_be_jup_M",
     "universal":
     {},
     "common_signals": {
-	"gwb": "hd_fixed_gamma_7_nfreq",
+	"gwb": "fixed_gamma_7_nfreq",
 	"bayes_ephem":
         {
-            "jup_el": [1, 1, 1, 1, 1, 1],
-	    "d_jupiter_mass": "False",
+            "jup_el": [0, 0, 0, 0, 0, 0],
+	    "d_jupiter_mass": "True",
 	    "d_neptune_mass": "False",
 	    "d_saturn_mass": "False",
 	    "d_uranus_mass": "False",
