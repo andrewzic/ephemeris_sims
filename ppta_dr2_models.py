@@ -152,7 +152,7 @@ class PPTADR2Models(StandardModels):
     Deterministic signal from errors in Solar System ephemerides.
     """
     ekw = {}
-    ekw['model'] = "orbel-v2"
+    ekw['model'] = "setIII"
     if isinstance(option, dict):
       # Converting parameters to bool masks
       for bekey, beval in option.items():
