@@ -68,7 +68,7 @@ if params.sampler == 'ptmcmcsampler':
     if opts.mpi_regime != 1:
         for p in pta:
             t = timeit.timeit(stmt = s, number = 100)
-            print(t)
+            print('time to eval likelihood: {}'.format(t))
       #sampler.sample(x0, N, **upd_sample_kwargs)
     else:
       print('Preparations for the MPI run are complete - now set \
