@@ -67,17 +67,19 @@ if params.sampler == 'ptmcmcsampler':
     del upd_sample_kwargs['p0']
     if opts.mpi_regime != 1:
         
-        for p in pta:
-            times = []
-            for n in range(100):
-                t0 = time.perf_counter()
-                p.get_lnlikelihood(x0)
-                t1 = time.perf_counter()
-                dt = t1 - t0
-                times.append(dt)
-            print(np.mean(times))
-            #p.timeit.timeit(stmt = s, number = 100)
-            print('time to eval likelihood: {}'.format(np.mean(times)))
+        #for p in pta:
+        #print(p)
+        
+        times = []
+        for n in range(100):
+            t0 = time.perf_counter()
+            pta.get_lnlikelihood(x0)
+            t1 = time.perf_counter()
+            dt = t1 - t0
+            times.append(dt)
+        print(np.mean(times))
+        #p.timeit.timeit(stmt = s, number = 100)
+        print('time to eval likelihood: {}'.format(np.mean(times)))
       #sampler.sample(x0, N, **upd_sample_kwargs)
     else:
       print('Preparations for the MPI run are complete - now set \
