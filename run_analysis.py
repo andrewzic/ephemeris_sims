@@ -39,19 +39,20 @@ if params.sampler == 'ptmcmcsampler':
     sampler = super_model.setup_sampler(resume=True, outdir=params.output_dir)#, initial_cov=covm)
     N = params.nsamp
     x0 = super_model.initial_sample()
-    try:
-      noisedict = get_noise_dict(psrlist=[pp.name for pp in params.psrs],
-                                 noisefiles=params.noisefiles)
-      x0 = super_model.informed_sample(noisedict)
-      # Start ORF inference with zero correlation:
-      if 'corr_coeff_0' in super_model.param_names and \
-         len(x0)==len(super_model.param_names):
+    #try:
+    noisedict = get_noise_dict(psrlist=[pp.name for pp in params.psrs],
+                               noisefiles=params.noisefiles)
+    print('THIS IS NOISE DICT', noisedict)
+    x0 = super_model.informed_sample(noisedict)
+    # Start ORF inference with zero correlation:
+    if 'corr_coeff_0' in super_model.param_names and \
+       len(x0)==len(super_model.param_names):
         print('Starting sampling free ORF with zeros')
         orf_mask = [True if 'corr_coeff' in prn else False \
                     for prn in super_model.param_names]
         x0[orf_mask] = 0.
-    except:
-      print('Informed sample is not possible')
+    #except:
+    #  print('Informed sample is not possible')
 
     # Remove extra kwargs that Bilby took from PTSampler module, not ".sample"
     ptmcmc_sample_kwargs = inspect.getargspec(sampler.sample).args
@@ -59,8 +60,10 @@ if params.sampler == 'ptmcmcsampler':
                                   if key in ptmcmc_sample_kwargs}
     del upd_sample_kwargs['Niter']
     del upd_sample_kwargs['p0']
+    #import ipdb; ipdb.set_trace()
     if opts.mpi_regime != 1:
       sampler.sample(x0, N, **upd_sample_kwargs)
+      
     else:
       print('Preparations for the MPI run are complete - now set \
              opts.mpi_regime to 2 and enjoy the speed!')
