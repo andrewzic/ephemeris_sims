@@ -112,7 +112,7 @@ if params.sampler == 'ptmcmcsampler':
             
             for _ in range(100):
                 t0 = time.perf_counter()
-                pta.get_lnlikelihood(x0)
+                p.get_lnlikelihood(x0)
                 t1 = time.perf_counter()
                 dt = t1 - t0
                 times.append(dt)
