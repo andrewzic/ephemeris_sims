@@ -63,11 +63,7 @@ if params.sampler == 'ptmcmcsampler':
     #import ipdb; ipdb.set_trace()
     if opts.mpi_regime != 1:
       sampler.sample(x0, N, **upd_sample_kwargs)
-<<<<<<< HEAD
-
-=======
       
->>>>>>> f90e6bff32079fe40c33f723095454c608835fa6
     else:
       print('Preparations for the MPI run are complete - now set \
              opts.mpi_regime to 2 and enjoy the speed!')
