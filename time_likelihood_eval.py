@@ -26,6 +26,43 @@ p.get_lnlikelihood(x0)
 
 import time
 
+
+def informed_sample(hypermodel, noisedict):
+
+
+    """
+    Yanked from Boris' enterprise_extensions fork.
+    Originally was a method of hypermodel class
+    now takes a hypermodel object as arg
+    
+    Take an initial sample from the noise file. Abscent parameters will be
+    sampled from the prior.
+    """
+
+    x0 = [np.array(p.sample()).ravel().tolist() \
+          if p.name not in noisedict.keys() \
+          else np.array(noisedict[p.name]).ravel().tolist() \
+          for p in hypermodel.models[0].params]
+    uniq_params = [str(p) for p in hypermodel.models[0].params]
+
+    for model in hypermodel.models.values():
+            param_diffs = np.setdiff1d([str(p) for p  in model.params], \
+                                        uniq_params)
+            mask = np.array([str(p) in param_diffs for p in model.params])
+            x0.extend([np.array(pp.sample()).ravel().tolist() \
+                       if pp.name not in noisedict.keys() \
+                       else np.array(noisedict[pp.name]).ravel().tolist() \
+                       for pp in np.array(model.params)[mask]])
+
+            uniq_params = np.union1d([str(p) for p in model.params], \
+                                      uniq_params)
+
+    x0.extend([[0.1]])
+            
+    return np.array([p for sublist in x0 for p in sublist])
+
+
+
 if params.sampler == 'ptmcmcsampler':
     super_model = hypermodel.HyperModel(pta)
     print('Super model parameters: ', super_model.params)
@@ -48,7 +85,7 @@ if params.sampler == 'ptmcmcsampler':
     try:
       noisedict = get_noise_dict(psrlist=[pp.name for pp in params.psrs],
                                  noisefiles=params.noisefiles)
-      x0 = super_model.informed_sample(noisedict)
+      x0 = informed_sample(super_model, noisedict)
       # Start ORF inference with zero correlation:
       if 'corr_coeff_0' in super_model.param_names and \
          len(x0)==len(super_model.param_names):
