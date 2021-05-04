@@ -151,6 +151,7 @@ class PPTADR2Models(StandardModels):
     """
     Deterministic signal from errors in Solar System ephemerides.
     """
+    
     ekw = {}
     ekw['model'] = "setIII"
     if isinstance(option, dict):
@@ -164,9 +165,14 @@ class PPTADR2Models(StandardModels):
     else:
       options = option
 
+    print('THIS IS BE OPTION')
+    print(option)
+      
     if "framedr" in option:
       ekw['frame_drift_rate'] = parameter.Uniform(-1e-10, 1e-10)\
                                                  ('frame_drift_rate')
+    else:
+      ekw['frame_drift_rate'] = False
 
     if "mer_m" in option or "inner" in option:
       ekw['d_mercury_mass'] = parameter.Normal(0, 1.66e-10)('d_mer_mass')
@@ -196,6 +202,9 @@ class PPTADR2Models(StandardModels):
     if "jup_m" in option or "outer" in option or "default" in option:
       ekw['d_jupiter_mass'] = parameter.Normal(0, 1.54976690e-11)\
                                               ('d_jup_mass')
+    else:
+      ekw['d_jupiter_mass'] = False
+      
     if "jup_el" in option or "outer" in option or "default" in option:
       if isinstance(option, dict) and (type(option['jup_el']) is list or \
                                        type(option['jup_el']) is np.ndarray):
@@ -204,32 +213,48 @@ class PPTADR2Models(StandardModels):
       else:
         ekw['jup_orb_elements'] = parameter.Uniform(-0.5, 0.5, size=6)\
                                                    ('jup_oe')
+    else:
+      ekw['jup_orb_elements'] = False
 
     if "sat_m" in option or "outer" in option or "default" in option:
       ekw['d_saturn_mass'] = parameter.Normal(0, 8.17306184e-12)('d_sat_mass')
+    else:
+      ekw['d_saturn_mass'] = False
+      
     if "sat_el" in option or "outer" in option:
       if isinstance(option, dict):
         ekw['sat_orb_elements'] = UniformMask(-5., 5., option['sat_el'])('sat_oe')
       else:
         ekw['sat_orb_elements'] = parameter.Uniform(-5., 5., size=6)('sat_oe')
+    else:
+      ekw['sat_orb_elements'] = False
 
     if "ura_m" in option or "outer" in option or "default" in option:
       ekw['d_uranus_mass'] = parameter.Normal(0, 5.71923361e-11)('d_ura_mass')
+    else:
+      ekw['d_uranus_mass'] = False
     if "ura_el" in option:
       if isinstance(option, dict):
         ekw['ura_orb_elements'] = UniformMask(-.5, .5, option['ura_el'])('ura_oe')
       else:
         ekw['ura_orb_elements'] = parameter.Uniform(-0.5, 0.5, size=6)('ura_oe')
+    else:
+      ekw['ura_orb_elements'] = False
 
     if "nep_m" in option or "outer" in option or "default" in option:
       ekw['d_neptune_mass'] = parameter.Normal(0, 7.96103855e-11)\
                                               ('d_nep_mass')
+    else:
+      ekw['d_neptune_mass'] = False
     if "nep_el" in option:
       if isinstance(option, dict):
         ekw['nep_orb_elements'] = UniformMask(-.5, .5, option['nep_el'])('nep_oe')
       else:
         ekw['nep_orb_elements'] = parameter.Uniform(-0.5, 0.5, size=6)('nep_oe')
+    else:
+      ekw['nep_orb_elements'] = False
 
+    print(ekw)
     eph = deterministic_signals.PhysicalEphemerisSignal(**ekw)
     return eph
 
