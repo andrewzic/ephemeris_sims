@@ -244,15 +244,15 @@ class PPTADR2Models(StandardModels):
     if "nep_m" in option or "outer" in option or "default" in option:
       ekw['d_neptune_mass'] = parameter.Normal(0, 7.96103855e-11)\
                                               ('d_nep_mass')
-    #else:
-    #  ekw['d_neptune_mass'] = False
+    else:
+      ekw['d_neptune_mass'] = False
     if "nep_el" in option:
       if isinstance(option, dict):
         ekw['nep_orb_elements'] = UniformMask(-.5, .5, option['nep_el'])('nep_oe')
       else:
         ekw['nep_orb_elements'] = parameter.Uniform(-0.5, 0.5, size=6)('nep_oe')
-    else:
-      ekw['nep_orb_elements'] = False
+    #else:
+    #  ekw['nep_orb_elements'] = False
 
     print(ekw)
     eph = deterministic_signals.PhysicalEphemerisSignal(**ekw)
