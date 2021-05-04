@@ -165,9 +165,9 @@ class PPTADR2Models(StandardModels):
     else:
       options = option
 
-    print('THIS IS BE OPTION')
-    print(option)
-      
+
+    #adding keyword arguments to PhysicalEphemerisSignal based on input options
+    #where PhysicalEphemerisSignal kwargs default to True, here we set to False
     if "framedr" in option:
       ekw['frame_drift_rate'] = parameter.Uniform(-1e-10, 1e-10)\
                                                  ('frame_drift_rate')
@@ -238,14 +238,14 @@ class PPTADR2Models(StandardModels):
         ekw['ura_orb_elements'] = UniformMask(-.5, .5, option['ura_el'])('ura_oe')
       else:
         ekw['ura_orb_elements'] = parameter.Uniform(-0.5, 0.5, size=6)('ura_oe')
-    else:
-      ekw['ura_orb_elements'] = False
+    #else:
+    #  ekw['ura_orb_elements'] = False
 
     if "nep_m" in option or "outer" in option or "default" in option:
       ekw['d_neptune_mass'] = parameter.Normal(0, 7.96103855e-11)\
                                               ('d_nep_mass')
-    else:
-      ekw['d_neptune_mass'] = False
+    #else:
+    #  ekw['d_neptune_mass'] = False
     if "nep_el" in option:
       if isinstance(option, dict):
         ekw['nep_orb_elements'] = UniformMask(-.5, .5, option['nep_el'])('nep_oe')
