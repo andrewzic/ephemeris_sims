@@ -1,0 +1,34 @@
+{
+    "model_name": "fixed_gamma_30_nfreq",
+    "universal":
+    {},
+    "common_signals": {
+	"gwb": "fixed_gamma_30_nfreq"
+    },
+    "J0437-4715":  {"efac": "by_backend" },
+    "J0613-0200":  {"efac": "by_backend" },
+    "J0711-6830":  {"efac": "by_backend" },
+    "J1017-7156":  {"efac": "by_backend" },
+    "J1022+1001":  {"efac": "by_backend" },
+    "J1024-0719":  {"efac": "by_backend" },
+    "J1045-4509":  {"efac": "by_backend" },
+    "J1125-6014":  {"efac": "by_backend" },
+    "J1446-4701":  {"efac": "by_backend" },
+    "J1545-4550":  {"efac": "by_backend" },
+    "J1600-3053":  {"efac": "by_backend" },
+    "J1603-7202":  {"efac": "by_backend" },
+    "J1643-1224":  {"efac": "by_backend" },
+    "J1713+0747":  {"efac": "by_backend" },
+    "J1730-2304":  {"efac": "by_backend" },
+    "J1732-5049":  {"efac": "by_backend" },
+    "J1744-1134":  {"efac": "by_backend" },
+    "J1824-2452A":  {"efac": "by_backend" },
+    "J1832-0836":  {"efac": "by_backend" },
+    "J1857+0943":  {"efac": "by_backend" },
+    "J1909-3744":  {"efac": "by_backend" },
+    "J1939+2134":  {"efac": "by_backend" },
+    "J2124-3358":  {"efac": "by_backend" },
+    "J2129-5721":  {"efac": "by_backend" },
+    "J2145-0750":  {"efac": "by_backend" },
+    "J2241-5236":  {"efac": "by_backend" }
+}
