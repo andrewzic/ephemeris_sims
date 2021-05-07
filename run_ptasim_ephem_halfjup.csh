@@ -5,6 +5,8 @@ set template=$PAT/ptasim_init_files/ptasim_DE990_halfjuporb_ppta_template.input
 
 foreach param_label (`cat $PAT/parameters.dat`)
     set ptasim_inp=$PAT/ptasim_init_files/ptasim_ppta_DE990_6yr_${param_label}.input
+    echo $ptasim_inp
+    #sleep 5
     if (! -f $ptasim_inp) then
 	cp $template $ptasim_inp
 	sed -i 's|BLAH|'${param_label}'|g' $ptasim_inp
@@ -20,7 +22,7 @@ foreach param_label (`cat $PAT/parameters.dat`)
     #endif
     echo $ptasim_inp
     ptaSimulate $ptasim_inp
-    source ${param_label}_perturb_ppta/scripts/runScripts_master
+    source ${param_label}_perturb_ppta_6yr/scripts/runScripts_master
     #echo `basename $param_label`_perturb_v2/scripts/runScripts_master
     echo "all done for "${param_label}
     cd $PAT
