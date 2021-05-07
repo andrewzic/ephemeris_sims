@@ -254,7 +254,7 @@ class PPTADR2Models(StandardModels):
     #else:
     #  ekw['nep_orb_elements'] = False
 
-    print(ekw)
+    #print(ekw)
     eph = deterministic_signals.PhysicalEphemerisSignal(**ekw)
     return eph
 
@@ -333,14 +333,19 @@ class PPTADR2Models(StandardModels):
           print('Removing auto-correlation')
           orf = hd_orf_noauto()
         else:
+          import time
+          #print('AZ about to do hd orf', time.perf_counter())
           orf = utils.hd_orf()
+          print(time.perf_counter)
         if len(optsp) > 1 or 'namehd' in option:
           gwname = 'gwb_hd'
         else:
           gwname = 'gwb'
+        #print('evaluating gwb fourierbasiscommongp', time.perf_counter())
         gwb = gp_signals.FourierBasisCommonGP(gwb_pl, orf, components=nfreqs,
                                               name=gwname,
                                               Tspan=self.params.Tspan)
+        #print('evaluating gwb fourierbasiscommongp', time.perf_counter())
       elif "mono" in option:
         print('Adding monopole ORF')
         orf = utils.monopole_orf()
