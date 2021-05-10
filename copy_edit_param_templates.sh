@@ -1,6 +1,6 @@
 #!/bin/bash
 
-ptemplate_fn="/DATA/CETUS_3/zic006/ssb/ptasim/DE990_sims/params/params_blah_ppta_pe_interporf_fixed_gamma_20nfreq_be_jup_el_20210510.dat"
+ptemplate_fn="/DATA/CETUS_3/zic006/ssb/ptasim/DE990_sims/params/params_blah_ppta_pe_interporf_fixed_gamma_20nfreq_20210510.dat"
 
 
 for p in `cat parameters.dat`
