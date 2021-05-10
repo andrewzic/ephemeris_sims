@@ -21,4 +21,4 @@ singularity exec /home/zic006/psr_gwb.sif which python3
 singularity exec /home/zic006/psr_gwb.sif echo $TEMPO2
 singularity exec /home/zic006/psr_gwb.sif echo $TEMPO2_CLOCK_DIR
 
-singularity exec /home/zic006/psr_gwb.sif python3 /flush5/zic006/ephemeris_sims/run_analysis.py --prfile "/flush5/zic006/ephemeris_sims/params/params_DA5_ppta_pe_interporf_fixed_gamma_20_nfreq_be_jup_el_20210510.dat"
+singularity exec /home/zic006/psr_gwb.sif python3 /flush5/zic006/ephemeris_sims/run_analysis.py --prfile "/flush5/zic006/ephemeris_sims/params/params_DA5_ppta_pe_interporf_fixed_gamma_20nfreq_be_jup_el_20210510.dat"
