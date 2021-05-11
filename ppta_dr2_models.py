@@ -165,6 +165,8 @@ class PPTADR2Models(StandardModels):
     else:
       options = option
 
+    print(options)
+    print(option)
 
     #adding keyword arguments to PhysicalEphemerisSignal based on input options
     #where PhysicalEphemerisSignal kwargs default to True, here we set to False
@@ -200,8 +202,8 @@ class PPTADR2Models(StandardModels):
         ekw['mar_orb_elements'] = parameter.Uniform(-5., 5., size=6)('mar_oe')
 
     if "jup_m" in option or "outer" in option or "default" in option:
-      ekw['d_jupiter_mass'] = parameter.Normal(0, 1.54976690e-11)\
-                                              ('d_jup_mass')
+      ekw['d_jupiter_mass'] = parameter.Normal(0, 1e-10)('d_jup_mass')
+      #parameter.Normal(0, 1.54976690e-11)('d_jup_mass')
     else:
       ekw['d_jupiter_mass'] = False
       
@@ -334,9 +336,9 @@ class PPTADR2Models(StandardModels):
           orf = hd_orf_noauto()
         else:
           import time
-          #print('AZ about to do hd orf', time.perf_counter())
+          print('AZ about to do hd orf', time.perf_counter())
           orf = utils.hd_orf()
-          print(time.perf_counter)
+          print('AZ called utils.hd_orf', time.perf_counter())
         if len(optsp) > 1 or 'namehd' in option:
           gwname = 'gwb_hd'
         else:
