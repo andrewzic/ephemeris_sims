@@ -201,7 +201,7 @@ class PPTADR2Models(StandardModels):
       else:
         ekw['mar_orb_elements'] = parameter.Uniform(-5., 5., size=6)('mar_oe')
 
-    if "jup_m" in option "d_jupiter_mass" in option or "outer" in option or "default" in option:
+    if "jup_m" in option or "d_jupiter_mass" in option or "outer" in option or "default" in option:
       ekw['d_jupiter_mass'] = parameter.Normal(0, 1e-10)('d_jup_mass')
       #parameter.Normal(0, 1.54976690e-11)('d_jup_mass')
     else:
