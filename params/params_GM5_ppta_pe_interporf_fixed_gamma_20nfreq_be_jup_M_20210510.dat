@@ -1,6 +1,6 @@
 paramfile_label: 20210510
 datadir: /flush5/zic006/ephemeris_sims/data/GM5/GM5_perturb_ppta/output/real_0/
-out: /flush5/zic006/ephemeris_sims/enterprise_out/GM5_ppta_pe_interporf_20_nfreq_be_jup_el_20210510/
+out: /flush5/zic006/ephemeris_sims/enterprise_out/GM5_ppta_pe_interporf_20_nfreq_be_jup_M_20210510/
 overwrite: True
 array_analysis: True
 ssephem: DE990_nominal
@@ -13,4 +13,4 @@ efac: -1
 #equad: -1
 noisefiles: /flush5/zic006/ephemeris_sims/data/noisefiles/
 {0}
-noise_model_file: /flush5/zic006/ephemeris_sims/data/noise_models/interporf_fixedgamma_20_nfreq_be_jup_el.json
+noise_model_file: /flush5/zic006/ephemeris_sims/data/noise_models/interporf_fixedgamma_20_nfreq_be_jup_M.json

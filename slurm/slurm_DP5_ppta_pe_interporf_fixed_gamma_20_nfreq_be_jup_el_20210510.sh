@@ -1,7 +1,7 @@
 #!/bin/bash
 #SBATCH --job-name=DP5_ppta_pe_interporf_fixgam_20nfreq_be_jup_el
 #SBATCH --output=/flush5/zic006/ephemeris_sims/slurm_logs/DP5_ppta_pe_interporf_fixed_gamma_7_nfreq_be_jup_el_20210510_%A_%a.log
-#SBATCH --ntasks=4
+#SBATCH --ntasks=10
 #SBATCH --time=1-21:30
 #SBATCH --mem-per-cpu=7G
 #SBATCH --tmp=8G
